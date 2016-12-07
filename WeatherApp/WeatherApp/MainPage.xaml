@@ -4,7 +4,7 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:WeatherApp"
              x:Class="WeatherApp.MainPage"
-             Title = "The Ultimate Weather App"
+             Title="The Ultimate Weather App"
              BackgroundImage="backgroundimage.jpg"
              BackgroundColor="#FF007DFF">
 
@@ -92,9 +92,11 @@
             Type=RelativeToParent,Property=Width,Factor=.5,Constant=0}"
         RelativeLayout.HeightConstraint="{ConstraintExpression
             Type=RelativeToParent,Property=Height,Factor=.5,Constant=0}" />
-        </RelativeLayout>
-        </AbsoluteLayout>-->
-        <Image x:Name="windGrid0" Source="windt.png" Margin="-5" Rotation="90"/>
+        </RelativeLayout>-->
+        <Grid>
+          <Image x:Name="windGrid0" Source="windt.png" Margin="-5" Rotation="90" />
+          <Label x:Name="windText0" Text="21" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+        </Grid>
         <!--<Image.RenderTransform>
             <RotateTransform CenterX="0" CenterY="0" Angle="45" />
           </Image.RenderTransform>
@@ -120,7 +122,10 @@
             <Label x:Name="tempGrid1" Text="-2&#186;C" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
           </StackLayout>
         </StackLayout>
-        <Image x:Name="windGrid1" Source="windt.png" Margin="-5" Rotation="135"/>
+        <Grid>
+          <Image x:Name="windGrid1" Source="windt.png" Margin="-5" Rotation="135" />
+          <Label x:Name="windText1" Text="10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+        </Grid>
         <Label x:Name="uvText1" Text="UV" Style="{StaticResource timeGrid}"/>
         <Image x:Name="uvGrid1" Source="vhighv.png" Margin="0"/>
       </StackLayout>
@@ -137,7 +142,10 @@
             <Label x:Name="tempGrid2" Text="-2&#186;C" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
           </StackLayout>
         </StackLayout>
-        <Image x:Name="windGrid2" Source="windt.png" Margin="-5" Rotation="180"/>
+        <Grid>
+          <Image x:Name="windGrid2" Source="windt.png" Margin="-5" Rotation="180" />
+          <Label x:Name="windText2" Text="27" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+        </Grid>
         <Label x:Name="uvText2" Text="UV" Style="{StaticResource timeGrid}"/>
         <Image x:Name="uvGrid2" Source="mediumm.png" Margin="0"/>
       </StackLayout>
@@ -154,24 +162,27 @@
             <Label x:Name="tempGrid3" Text="-1&#186;C" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
           </StackLayout>
         </StackLayout>
-        <Image x:Name="windGrid3" Source="windt.png" Margin="-5" Rotation="225"/>
+        <Grid>
+          <Image x:Name="windGrid3" Source="windt.png" Margin="-5" Rotation="225" />
+          <Label x:Name="windText3" Text="30" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
+        </Grid>
         <Label x:Name="uvText3" Text="UV" Style="{StaticResource timeGrid}"/>
         <Image x:Name="uvGrid3" Source="lowl.png" Margin="0"/>
       </StackLayout>
 
-      <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="#68004CFF">
-        <Label x:Name="dayowGrid0" Text="Wed" Style="{StaticResource dayGrid}"/>
-        <Label x:Name="dayGrid0" Text="29th Apr" Style="{StaticResource dayGrid}"/>
+      <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="#68004CFF" BindingContext="{x:Static sys:DateTime.Now}"><!--{x:Static sys:DateTime.Now.AddDays(-1)}-->
+        <Label x:Name="dayowGrid0" Text="{Binding StringFormat='{0:ddd}'}" Style="{StaticResource dayGrid}"/>
+        <Label x:Name="dayGrid0" Text="{Binding StringFormat='{0:d MMM}'}" Style="{StaticResource dayGrid}"/>
         <Image x:Name="dayweaGrid0" Source="lighticons01.png" Margin="-30"/>
       </StackLayout>
-      <StackLayout Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" BackgroundColor="#1D004CFF">
-        <Label x:Name="dayowGrid1" Text="Thu" Style="{StaticResource dayGrid}"/>
-        <Label x:Name="dayGrid1" Text="30th Apr" Style="{StaticResource dayGrid}"/>
+      <StackLayout Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" BackgroundColor="#1D004CFF" BindingContext="{x:Static sys:DateTime.Now}"><!--{x:Static sys:DateTime.Now.AddDays(0)}-->
+        <Label x:Name="dayowGrid1" Text="{Binding StringFormat='{0:ddd}'}" Style="{StaticResource dayGrid}"/>
+        <Label x:Name="dayGrid1" Text="{Binding StringFormat='{0:d MMM}'}" Style="{StaticResource dayGrid}"/>
         <Image x:Name="dayweaGrid1" Source="lighticons02.png" Margin="-30"/>
       </StackLayout>
-      <StackLayout Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="4" BackgroundColor="#68004CFF">
-        <Label x:Name="dayowGrid2" Text="Fri" Style="{StaticResource dayGrid}"/>
-        <Label x:Name="dayGrid2" Text="1st May" Style="{StaticResource dayGrid}"/>
+      <StackLayout Grid.Row="2" Grid.Column="8" Grid.ColumnSpan="4" BackgroundColor="#68004CFF" BindingContext="{x:Static sys:DateTime.Now}"><!--{x:Static sys:DateTime.Now.AddDays(1)}-->
+        <Label x:Name="dayowGrid2" Text="{Binding StringFormat='{0:ddd}'}" Style="{StaticResource dayGrid}"/>
+        <Label x:Name="dayGrid2" Text="{Binding StringFormat='{0:d MMM}'}" Style="{StaticResource dayGrid}"/>
         <Image x:Name="dayweaGrid2" Source="lighticons01.png" Margin="-30"/>
       </StackLayout>
     </Grid>
