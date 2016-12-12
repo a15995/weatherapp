@@ -1,0 +1,40 @@
+﻿using System;
+using Xamarin.Forms;
+
+namespace WeatherApp
+{
+    public partial class WeatherPage : ContentPage
+    {
+        public WeatherPage()
+        {
+            InitializeComponent();
+            this.Title = "The Ultimate Weather App";
+            //getWeatherBtn.Clicked += GetWeatherBtn_Clicked;
+            GetWeatherOnStart("Virum");
+            //Set the default binding to a default object for now
+            this.BindingContext = new Weather();        
+        }
+
+    private async void GetWeatherOnStart(string cityName)
+    {
+        Weather weather = await Core.GetWeather(cityName);
+        if (weather != null)
+        {
+            this.BindingContext = weather;
+        }
+    }
+
+    /*private async void GetWeatherBtn_Clicked(object sender, EventArgs e) // Statisk klasse, der overskriver eksisterende vejrdata og indsætter nye
+    {
+        if (!String.IsNullOrEmpty(zipCodeEntry.Text))
+        {
+            Weather weather = await Core.GetWeather(zipCodeEntry.Text); 
+            if (weather != null)
+            {
+                this.BindingContext = weather;
+                getWeatherBtn.Text = "Search Again";
+            }
+        }
+    }*/
+}
+}
