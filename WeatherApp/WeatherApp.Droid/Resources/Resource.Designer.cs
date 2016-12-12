@@ -2231,10 +2231,10 @@ namespace WeatherApp.Droid
 			public const int lowl = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int medium = 2130837675;
+			public const int moderate = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int mediumm = 2130837676;
+			public const int moderatem = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
 			public const int mr_dialog_material_background_dark = 2130837677;
@@ -2281,20 +2281,26 @@ namespace WeatherApp.Droid
 			// aapt resource value: 0x7f0200bb
 			public const int mr_ic_play_light = 2130837691;
 			
-			// aapt resource value: 0x7f0200c0
-			public const int notification_template_icon_bg = 2130837696;
-			
 			// aapt resource value: 0x7f0200bc
-			public const int vhigh = 2130837692;
+			public const int na = 2130837692;
 			
 			// aapt resource value: 0x7f0200bd
-			public const int vhighv = 2130837693;
+			public const int nauv = 2130837693;
+			
+			// aapt resource value: 0x7f0200c2
+			public const int notification_template_icon_bg = 2130837698;
 			
 			// aapt resource value: 0x7f0200be
-			public const int wind2t = 2130837694;
+			public const int vhigh = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int windt = 2130837695;
+			public const int vhighv = 2130837695;
+			
+			// aapt resource value: 0x7f0200c0
+			public const int wind2t = 2130837696;
+			
+			// aapt resource value: 0x7f0200c1
+			public const int windt = 2130837697;
 			
 			static Drawable()
 			{

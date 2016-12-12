@@ -29,8 +29,8 @@
 
     <Grid>
       <Grid.RowDefinitions>
-        <RowDefinition Height="1.2*"/>
-        <RowDefinition Height="2.2*"/>
+        <RowDefinition Height="1.3*"/>
+        <RowDefinition Height="2.1*"/>
         <RowDefinition Height="*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
@@ -61,9 +61,9 @@
           <Label x:Name="hourGrid0" Text="01" FontSize="Medium" TextColor="White" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
           <Label x:Name="minuteGrid0" Text="00" FontSize="Small" TextColor="White" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-        <Image x:Name="imageGrid0" Source="{Binding Icon}" Margin="-10"/>
+        <Image x:Name="imageGrid0" Source="{Binding Icon}" Margin="-5"/>
         <Label x:Name="humidGrid0" Text="{Binding Humidity}" Style="{StaticResource timeGrid}"/>
-        <StackLayout Padding="15,0,15,0" Spacing="0">
+        <StackLayout Padding="15,10,15,5" Spacing="0">
           <StackLayout Padding="5,10,5,10" Spacing="0" BackgroundColor="{Binding TempColour}" >
             <Label x:Name="tempGrid0" Text="{Binding Temperature}" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
           </StackLayout>
@@ -108,10 +108,10 @@
             <RotateTransform CenterX="0" CenterY="0" Angle="45" />
           </Rectangle.RenderTransform>
         </Rectangle>-->
-        <Image x:Name="uvGrid0" Source="extremex.png" Margin="0"/>
+        <Image x:Name="uvGrid0" Source="{Binding UVIcon}" Margin="0"/>
       </StackLayout>
 
-      <StackLayout Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" BackgroundColor="#6800DEFF">
+      <StackLayout Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" BackgroundColor="#68009DFF">
         <StackLayout Orientation="Horizontal" Spacing="0">
           <Label x:Name="hourGrid1" Text="04" FontSize="Medium" TextColor="White" HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
           <Label x:Name="minuteGrid1" Text="00" FontSize="Small" TextColor="White" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand"/>
@@ -148,7 +148,7 @@
           <Label x:Name="windText2" Text="27" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black" />
         </Grid>
         <Label x:Name="uvText2" Text="UV" Style="{StaticResource timeGrid}"/>
-        <Image x:Name="uvGrid2" Source="mediumm.png" Margin="0"/>
+        <Image x:Name="uvGrid2" Source="moderatem.png" Margin="0"/>
       </StackLayout>
 
       <StackLayout Grid.Row="1" Grid.Column="9" Grid.ColumnSpan="3" BackgroundColor="#68009DFF">
